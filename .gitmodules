@@ -1,3 +1,4 @@
 [submodule "nvim-cfg"]
-	path = nvim
-	url = git@github.com:rchirinos11/nvim-cfg
+  path = nvim
+  url = git@github.com:rchirinos11/nvim-cfg
+  branch = master
