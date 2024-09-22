@@ -17,10 +17,14 @@ key[End]="${terminfo[kend]}"
 key[Delete]="${terminfo[kdch1]}"
 key[Up]="${terminfo[kcuu1]}"
 key[Down]="${terminfo[kcud1]}"
+key[Control-Left]="${terminfo[kLFT5]}"
+key[Control-Right]="${terminfo[kRIT5]}"
 
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
 [[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"     delete-char
+[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
+[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	autoload -Uz add-zle-hook-widget
 	function zle_application_mode_start { echoti smkx }
@@ -43,6 +47,7 @@ alias cpp='g++ main.cpp -lglut -lGLU -lGL && ./a.out'
 alias crc='gcc main.c -lncurses && ./a.out'
 alias rezource='source $ZDOTDIR/.zshrc'
 alias spv='source bin/activate; tmux neww; vi'
+alias df='df -hx tmpfs'
 
 # Java moment
 alias gcb='gradle clean b'
