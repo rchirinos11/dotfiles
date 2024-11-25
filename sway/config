@@ -6,6 +6,8 @@ set $right l
 set $term foot
 
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
 set $menu exec $term -a launcher -e sway-launcher-desktop
 
 ### Idle configuration
@@ -22,7 +24,6 @@ set $menu exec $term -a launcher -e sway-launcher-desktop
 
 input "type:keyboard" {
   xkb_layout us,es
-  xkb_variant ,nodeadkeys
   xkb_options grp:alt_shift_toggle
   repeat_delay 300
   repeat_rate 100
