@@ -24,7 +24,7 @@ set $menu exec $term -a launcher -e sway-launcher-desktop
 
 input "type:keyboard" {
   xkb_layout us,es
-  xkb_options grp:alt_shift_toggle
+  xkb_options grp:alt_shift_toggle,ctrl:nocaps
   repeat_delay 300
   repeat_rate 100
 }
